@@ -1,10 +1,64 @@
-<?php 
+<?php
 include("header.php");
-?>
+if(!empty($_POST)){
+    $Marque=trim(strip_tags($_POST["Marque"]));
+    $Modele=trim(strip_tags($_POST["Modèle"]));
+    $Taille=trim(strip_tags($_POST["Taille"]));
+    $Prix=trim(strip_tags($_POST["Prix"]));
 
-<form action="">
-                <input type="number" id="sale" name="sale">
-            </form>
+$dsn="mysql:host=localhost;dbname=dodo3000";
+$db= new PDO($dsn, "root", "");
+$query=$db->prepare("INSERT INTO beds (brand, name, size, price) VALUES(:brand, :name, :size, :price)");
+$query->bindParam(":brand", $Marque);
+$query->bindParam(":name", $Modele);
+$query->bindParam(":size", $Taille);
+$query->bindParam(":price", $Prix, PDO::PARAM_INT);
+if($query->execute()){
+    header("Location: index.php");
+}
+
+}
+
+
+
+
+
+?>
+<div class="sale">
+<form action="index.php" method="get"class="sale-form">
+    <input type="submit" value="Appliquer une démarque">
+    <input type="number" id="sale" name="sale">
+</form>
+</div>
+
+<div class="add-bed">
+    <form action="" method="post">
+            <div class="form-group">
+                 <label for="inputBrand">Marque : </label>
+                <input id="inputBrand" type="text" name="Marque" value="<?= isset($Marque) ? $Marque: "" ?>">
+            </div>
+            <div class="form-group">
+                <label for="inputName">Modèle : </label>
+                <input id="inputName"type="text" name="Modèle" value="<?= isset($Modele) ? $Modele: "" ?>">
+            </div>
+            <div class="form-group">
+                <label for="inputSize">Taille : </label>
+                <input id="inputSize"type="text" name="Taille" value="<?= isset($Taille) ? $Taille: "" ?>">
+            </div>
+            <div class="form-group">
+                <label for="inputPrice">Prix : </label>
+                <input id="inputPrice"type="number" name="Prix" value="<?= isset($Prix) ? $Prix: "" ?>">
+            </div>
+            <input type="submit" value="Ajouter un lit">
+        </form>
+
+
+        
+       
+        
+        
+        
+    
 
 
 <?php 

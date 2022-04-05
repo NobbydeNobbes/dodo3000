@@ -12,8 +12,9 @@
         <div class="header">
             <img src="./img/3.png" alt="logo">    
            <a href="index.php"> <h1>Literie3000</h1> </a>
+           <a href="admin.php"><input type="submit" value="Espace Administrateur" action="admin.php"></a>
            
-            <h2>Catalogue</h2>
+            
             
         </div>
 

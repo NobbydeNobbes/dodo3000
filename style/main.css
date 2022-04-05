@@ -16,6 +16,21 @@
   font-family: "Raleway", sans-serif;
   color: white;
 }
+.header input {
+  width: 10rem;
+  height: 3rem;
+  position: absolute;
+  margin-left: 5%;
+  background-color: #00006E;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  border-radius: 5rem;
+}
+.header input:hover {
+  background-color: white;
+  color: #00006E;
+}
 
 .catalogue {
   display: flex;
