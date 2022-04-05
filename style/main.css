@@ -6,6 +6,7 @@
   background-color: #00006E;
   width: 50%;
   margin-left: 22rem;
+  margin-bottom: 0;
 }
 .header img {
   width: 9rem;
@@ -19,7 +20,13 @@
 .catalogue {
   display: flex;
   flex-direction: column;
-  margin-top: 1rem;
+  margin-top: 0rem;
+}
+.catalogue h2 {
+  font-family: "Raleway", sans-serif;
+  margin-top: 10rem;
+  align-self: center;
+  text-decoration: underline;
 }
 .catalogue .catalogue-item {
   display: flex;

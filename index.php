@@ -12,6 +12,7 @@ include("header.php");
 ?>
     
   <div class="catalogue">
+  <h2>Catalogue</h2>
         
 <?php
 foreach($items as $bed){
@@ -29,8 +30,6 @@ foreach($items as $bed){
         </div>
 
     </div>
-<?php } ?>
+<?php } 
     
-</div>
-</body>
-</html>
+include("footer.php");?>
