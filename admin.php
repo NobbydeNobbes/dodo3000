@@ -11,7 +11,7 @@ if(!empty($_POST)){
     $Modele=trim(strip_tags($_POST["Modèle"]));
     $Taille=trim(strip_tags($_POST["Taille"]));
     $Prix=trim(strip_tags($_POST["Prix"]));
-    $Image=$_Files["Image"]["name"];
+    $Image=$_FILES["Image"]["name"];
     $tmpName= $_FILES["Image"]['tmp_name'];
     $name= $_FILES["Image"]['name'];
     $uploadPath='./products/'.$name;
