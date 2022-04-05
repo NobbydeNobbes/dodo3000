@@ -10,16 +10,16 @@ CREATE TABLE beds(
 INSERT INTO beds
 (brand, name, size, price)
 values
-("EPEDA"; "MATELAS Delhi", "90x190", "759");
+("EPEDA", "MATELAS Delhi", "90x190", "759");
 INSERT INTO beds
 (brand, name, size, price)
 values
-("DREAMWAY"; "MATELAS Orlando", "90x190", "809");
+("DREAMWAY", "MATELAS Orlando", "90x190", "809");
 INSERT INTO beds
 (brand, name, size, price)
 values
-("BULTEX"; "MATELAS Valenciennes", "140x190", "759");
+("BULTEX", "MATELAS Valenciennes", "140x190", "759");
 INSERT INTO beds
 (brand, name, size, price)
 values
-("EPEDA"; "MATELAS Seville", "160x200", "1019");
+("EPEDA", "MATELAS Seville", "160x200", "1019");
