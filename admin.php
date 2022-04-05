@@ -39,6 +39,22 @@ if($query->execute()){
 
 }
 
+$dsn="mysql:host=localhost;dbname=dodo3000";
+$db= new PDO($dsn, "root","");
+$query=$db->query("SELECT * FROM beds");
+
+$items=$query->fetchALL();
+
+
+if(isset($_POST["list"])){
+$deleteItem=$_POST["list"];
+$query=$db->prepare("DELETE FROM beds WHERE name = $deleteItem");
+$query->execute(); }
+
+
+
+
+
 
 
 
@@ -76,6 +92,23 @@ if($query->execute()){
             </div>
             <input type="submit" value="Ajouter un lit">
         </form>
+</div>
+
+<div class="delateTable">
+    <form action="" method="post" class="delete">
+    <label for="listMenu">Supprimer un lit du catalogue</label>
+    <select id="listMenu">
+        <?php foreach($items as $item){ ?>
+            <option name="list" id="list"><?=$item["name"]?></option>
+        <?php
+     }?>
+    
+    </select>
+    <input type="submit" value="Suppression">
+        </form>
+</div>
+
+
 
 
         
