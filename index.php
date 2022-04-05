@@ -17,7 +17,7 @@ include("header.php");
 <?php
 foreach($items as $bed){
 ?>  <div class="catalogue-item">
-        <img src="./products/<?=$bed["name"]?>.jpg">
+        <img src="./products/<?=$bed["image"]?>">
         <h3><?=$bed["brand"]?></h3>
         <p><?=$bed["name"]?>  <?=$bed["size"]?></p>
         
