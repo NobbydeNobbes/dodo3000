@@ -3,12 +3,10 @@ $dsn="mysql:host=localhost;dbname=dodo3000";
 $db= new PDO($dsn, "root", "");
 $query=$db->query("SELECT * FROM beds");
 $items=$query->fetchAll();
-foreach($items as $beds){
-$price=$beds["price"];};
-    if(isset($_GET["sale"])){
-        $price=$price-($_GET["sale"]);
+
         
-    }
+        
+    
 
 include("header.php");
 ?>
@@ -26,7 +24,7 @@ foreach($items as $bed){
         
         <?php if(isset($_GET["sale"])){?>
             <p><strike><?=$bed["price"]?> € </strike></p>
-             <p> <?= $price ?> </p>
+             <p style="color:#aa2080;"> <?= $bed["price"]-($_GET["sale"]) ?> €</p>
             <?php }else{?><p><?=$bed["price"]?> € <?php } ?></p>
         </div>
 
